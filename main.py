@@ -38,6 +38,13 @@ class MyUI(QtWidgets.QWidget):
 
     ### 确认参与者名单，并将其锁定
     def sure_name_list(self):
+        if self.ui.name_textEdit.toPlainText() == '':
+            # 弹出一个消息框来提醒用户
+            QtWidgets.QMessageBox.warning(self, '警告', '游戏玩家为空')
+            return
+        if not self.color_list:
+            QtWidgets.QMessageBox.warning(self, '警告', '未读取配置信息')
+            return
         self.ui.name_textEdit.setReadOnly(True)
         text = self.ui.name_textEdit.toPlainText()
         self.player_list = text.split('\n')
