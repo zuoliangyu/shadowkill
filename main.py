@@ -1,12 +1,22 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QLineEdit
+import sys
+
+from PyQt5 import QtWidgets
 
 import test0
 
-import sys
+
+### 用于读取QSS
+class CommonHelper:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def readQss(style):
+        with open(style, 'r', encoding='utf-8') as f:
+            return f.read()
 
 
+### 页面设置
 class MyUI(QtWidgets.QWidget):
     def __init__(self):
         self.color_list = []  # 每个人的颜色
@@ -113,7 +123,10 @@ class MyUI(QtWidgets.QWidget):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
+    styleFile = './style.qss'
+    qssStyle = CommonHelper.readQss(styleFile)
     Form = MyUI()
+    Form.setStyleSheet(qssStyle)
     Form.show()
 
     sys.exit(app.exec_())
