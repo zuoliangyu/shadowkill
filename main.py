@@ -1,6 +1,9 @@
+from datetime import datetime
+import os
 import sys
 
 from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 import test0
 
@@ -46,6 +49,22 @@ class MyUI(QtWidgets.QWidget):
                 pass
         print(self.color_list)
 
+    def create_folder(self):
+        # 获取当前时间
+        now = datetime.now()
+        # 格式化时间字符串为文件夹名
+        folder_name = now.strftime("%Y-%m-%d_%H-%M-%S")
+
+        # 指定文件夹路径
+        folder_path = os.path.join("res", folder_name)
+
+        # 创建文件夹
+        try:
+            os.makedirs(folder_path, exist_ok=True)
+            QMessageBox.information(self, "成功", f"文件夹 {folder_name} 创建成功！")
+        except Exception as e:
+            QMessageBox.critical(self, "错误", f"创建文件夹时出错: {e}")
+
     ### 确认参与者名单，并将其锁定
     def sure_name_list(self):
         if self.ui.name_textEdit.toPlainText() == '':
@@ -55,6 +74,7 @@ class MyUI(QtWidgets.QWidget):
         if not self.color_list:
             QtWidgets.QMessageBox.warning(self, '警告', '未读取配置信息')
             return
+        self.create_folder()
         self.ui.name_textEdit.setReadOnly(True)
         text = self.ui.name_textEdit.toPlainText()
         self.player_list = text.split('\n')
@@ -84,6 +104,7 @@ class MyUI(QtWidgets.QWidget):
         for button in self.player_now_state:
             # 将按钮添加到 QHBoxLayout 中
             self.ui.game_player_horizontalLayout.addWidget(button)
+
         self.ui.load_name_pushbutton.setStyleSheet("color: gray")
         self.ui.load_name_pushbutton.setEnabled(False)  # 禁用加载按钮，防止未知bug
         self.ui.load_config_pushbutton.setStyleSheet("color: gray")
