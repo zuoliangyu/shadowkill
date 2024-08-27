@@ -39,7 +39,7 @@ class MyUI(QtWidgets.QWidget):
 
     def load_config(self):
         try:
-            with open('color.txt', 'r') as file:
+            with open('./config/color.txt', 'r') as file:
                 # 读取文件的每一行，并存储在一个列表中
                 self.color_list = file.readlines()
             self.color_list = [name.strip() for name in self.color_list]
@@ -47,7 +47,7 @@ class MyUI(QtWidgets.QWidget):
             # 弹出一个消息框来提醒用户
             QtWidgets.QMessageBox.warning(self, '文件不存在', '文件 color.txt 不存在，已创建新文件。')
             # 创建新文件
-            with open('color.txt', 'w') as file:
+            with open('./config/color.txt', 'w') as file:
                 pass
         print(self.color_list)
 
@@ -146,7 +146,7 @@ class MyUI(QtWidgets.QWidget):
     ### 读取参与者名单
     def load_name_list(self):
         try:
-            with open('name.txt', 'r') as file:
+            with open('./config/name.txt', 'r') as file:
                 # 读取文件的每一行，并存储在一个列表中
                 namelist = file.readlines()
             namelist = [name.strip() for name in namelist]
@@ -159,7 +159,7 @@ class MyUI(QtWidgets.QWidget):
             # 弹出一个消息框来提醒用户
             QtWidgets.QMessageBox.warning(self, '文件不存在', '文件 name.txt 不存在，已创建新文件。')
             # 创建新文件
-            with open('name.txt', 'w') as file:
+            with open('./config/name.txt', 'w') as file:
                 pass
 
 
