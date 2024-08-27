@@ -1,0 +1,72 @@
+QWidget {
+    background-color: #1a0000; /* 深色背景 */
+    color: #ffb3b3; /* 淡红色文字，保证可读性 */
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    border: 2px solid #660000; /* 边框颜色稍微减淡 */
+}
+
+QPushButton {
+    background-color: #4d0000; /* 按钮背景稍微亮一些 */
+    color: #ffd1d1; /* 按钮文字颜色更亮 */
+    border: 2px solid #990000; /* 边框颜色 */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #800000; /* 鼠标悬停时按钮颜色 */
+    color: #ffe6e6; /* 悬停时文字颜色变亮 */
+}
+
+QLineEdit, QTextEdit {
+    background-color: #330000; /* 深色文本框背景 */
+    color: #ffb3b3; /* 文字颜色保证可读性 */
+    border: 2px solid #800000; /* 边框颜色 */
+    padding: 5px;
+    border-radius: 3px;
+}
+
+QScrollBar:vertical {
+    background-color: #4d0000; /* 滚动条背景颜色 */
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #800000; /* 滚动条把手颜色 */
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background-color: #990000; /* 滚动条上下箭头颜色 */
+    height: 10px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background-color: #1a0000; /* 滚动条剩余部分颜色 */
+}
+
+QComboBox, QMenu {
+    background-color: #4d0000; /* 下拉菜单背景颜色 */
+    color: #ffd1d1; /* 菜单文字颜色 */
+    border: 2px solid #990000; /* 边框颜色 */
+}
+
+QMenu::item:selected {
+    background-color: #800000; /* 菜单项选中背景颜色 */
+    color: #ffe6e6; /* 选中文字颜色 */
+}
+
+QCheckBox, QRadioButton {
+    color: #ffd1d1; /* 文字颜色 */
+}
+
+QCheckBox::indicator:unchecked, QRadioButton::indicator:unchecked {
+    background-color: #4d0000;
+    border: 2px solid #990000;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #990000;
+    border: 2px solid #ff0000;
+}

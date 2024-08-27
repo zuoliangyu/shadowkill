@@ -22,9 +22,21 @@ class CommonHelper:
             return False
 
 
+def get_qss_files(folder_path):
+    qss_files = []
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith('.qss'):
+                qss_files.append(file[:-4])  # 去掉 .qss 后缀
+    return qss_files
+
+
 ### 页面设置
 class MyUI(QtWidgets.QWidget):
     def __init__(self):
+        self.theme_list = ['default']
+        self.theme_list.extend(get_qss_files('./config'))
+        print(self.theme_list)
         self.save_photo_path = ''  # 游戏截图保存目录
         self.color_list = []  # 每个人的颜色
         self.player_list = []  # 开始的参与者名单
@@ -34,6 +46,10 @@ class MyUI(QtWidgets.QWidget):
         self.ui = test0.Ui_Form()
         self.ui.setupUi(self)
 
+        self.ui.theme_comboBox.addItems(self.theme_list)
+
+        # 绑定按钮
+        self.ui.theme_comboBox.currentIndexChanged.connect(self.change_theme)
         self.ui.load_name_pushbutton.clicked.connect(self.load_name_list)
         self.ui.sure_name_pushbutton.clicked.connect(self.sure_name_list)
         self.ui.unlock_pushbutton.clicked.connect(self.unlock_name_list)
@@ -42,6 +58,21 @@ class MyUI(QtWidgets.QWidget):
     ### 添加历史操作记录
     def add_history_text(self, message):
         self.ui.operation_history_textEdit.append(message)
+
+    ### 修改主题
+    def change_theme(self, index):
+        if index == 0:
+            self.setStyleSheet("")  # 清除样式，恢复默认
+            return
+        style_fil_path = f'./config/{self.ui.theme_comboBox.currentText()}.qss'
+        print(index)
+        qssStyle = CommonHelper.readQss(style_fil_path)
+        if qssStyle:
+            self.setStyleSheet(qssStyle)
+            self.add_history_text(f"主题切换为: {self.ui.theme_comboBox.currentText()}")
+        else:
+            self.add_history_text("主题文件读取失败")
+        print(f"Selected item: {self.ui.theme_comboBox.currentText()}")
 
     def load_config(self):
         try:
@@ -169,9 +200,5 @@ class MyUI(QtWidgets.QWidget):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     Form = MyUI()
-    styleFile = './config/style.qss'
-    qssStyle = CommonHelper.readQss(styleFile)
-    if qssStyle:
-        Form.setStyleSheet(qssStyle)
     Form.show()
     sys.exit(app.exec_())

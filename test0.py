@@ -96,6 +96,9 @@ class Ui_Form(object):
         self.operation_history_textEdit.setFocusPolicy(QtCore.Qt.NoFocus)
         self.operation_history_textEdit.setObjectName("operation_history_textEdit")
         self.verticalLayout_2.addWidget(self.operation_history_textEdit)
+        self.theme_comboBox = QtWidgets.QComboBox(Form)
+        self.theme_comboBox.setGeometry(QtCore.QRect(920, 40, 87, 22))
+        self.theme_comboBox.setObjectName("theme_comboBox")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
