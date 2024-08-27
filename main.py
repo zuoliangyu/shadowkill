@@ -3,7 +3,7 @@ import os
 import sys
 
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QApplication
 
 import test0
 
@@ -22,6 +22,7 @@ class CommonHelper:
 ### 页面设置
 class MyUI(QtWidgets.QWidget):
     def __init__(self):
+        self.save_photo_path = ''  # 游戏截图保存目录
         self.color_list = []  # 每个人的颜色
         self.player_list = []  # 开始的参与者名单
         self.player_now_state = []  # 当前参与者
@@ -34,6 +35,7 @@ class MyUI(QtWidgets.QWidget):
         self.ui.sure_name_pushbutton.clicked.connect(self.sure_name_list)
         self.ui.unlock_pushbutton.clicked.connect(self.unlock_name_list)
         self.ui.load_config_pushbutton.clicked.connect(self.load_config)
+
 
     def load_config(self):
         try:
@@ -49,6 +51,25 @@ class MyUI(QtWidgets.QWidget):
                 pass
         print(self.color_list)
 
+    def take_screenshot(self, button_text):
+        # 获取当前时间
+        now = datetime.now()
+        # 格式化时间字符串为文件名
+        file_name = f"{button_text}_{now.strftime('%Y-%m-%d_%H-%M-%S')}.png"
+
+        # 指定保存路径
+        save_path = os.path.join("screenshots", file_name)
+
+        # 截取窗口
+        screenshot = QApplication.primaryScreen().grabWindow(self.winId())
+
+        # 保存截图
+        try:
+            screenshot.save(save_path)
+            print(f"截图保存为 {save_path}")
+        except Exception as e:
+            print(f"保存截图时出错: {e}")
+
     def create_folder(self):
         # 获取当前时间
         now = datetime.now()
@@ -56,11 +77,11 @@ class MyUI(QtWidgets.QWidget):
         folder_name = now.strftime("%Y-%m-%d_%H-%M-%S")
 
         # 指定文件夹路径
-        folder_path = os.path.join("res", folder_name)
+        self.save_photo_path = os.path.join("res", folder_name)
 
         # 创建文件夹
         try:
-            os.makedirs(folder_path, exist_ok=True)
+            os.makedirs(self.save_photo_path, exist_ok=True)
             QMessageBox.information(self, "成功", f"文件夹 {folder_name} 创建成功！")
         except Exception as e:
             QMessageBox.critical(self, "错误", f"创建文件夹时出错: {e}")
