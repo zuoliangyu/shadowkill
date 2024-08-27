@@ -63,6 +63,7 @@ class MyUI(QtWidgets.QWidget):
     def change_theme(self, index):
         if index == 0:
             self.setStyleSheet("")  # 清除样式，恢复默认
+            self.add_history_text("主题切换为: default")
             return
         style_fil_path = f'./config/{self.ui.theme_comboBox.currentText()}.qss'
         print(index)
@@ -80,6 +81,7 @@ class MyUI(QtWidgets.QWidget):
                 # 读取文件的每一行，并存储在一个列表中
                 self.color_list = file.readlines()
             self.color_list = [name.strip() for name in self.color_list]
+            self.add_history_text('读取配置信息成功')
         except FileNotFoundError:
             self.add_history_text('文件 color.txt 不存在，已创建新文件')
             # 创建新文件
@@ -190,6 +192,7 @@ class MyUI(QtWidgets.QWidget):
             text = '\n'.join(namelist)
             # 将文本设置到 QTextEdit 中
             self.ui.name_textEdit.setText(text)
+            self.add_history_text('读取参与者名单成功')
         except FileNotFoundError:
             self.add_history_text('文件 name.txt 不存在，已创建新文件')
             # 创建新文件
