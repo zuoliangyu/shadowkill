@@ -1,0 +1,10 @@
+mediumvioletred
+hotpink
+red
+indigo
+blueviolet
+mediumslateblue
+thistle
+salmon
+olive
+sandybrown
