@@ -1,11 +1,11 @@
 from datetime import datetime
 import os
 import sys
-
-from PyQt5 import QtWidgets
+import ctypes
+from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMessageBox, QApplication
 
-import test0
+import ShadowKill_UI
 
 
 ### 用于读取QSS
@@ -42,11 +42,27 @@ class MyUI(QtWidgets.QWidget):
         self.player_list = []  # 开始的参与者名单
         self.player_now_state = []  # 当前参与者
         super().__init__()
-        # 创建一个 test0.Ui_Form 的实例
-        self.ui = test0.Ui_Form()
-        self.ui.setupUi(self)
-
+        self.init_my_ui()
         self.ui.theme_comboBox.addItems(self.theme_list)
+        self.init_my_button()
+
+    def init_my_ui(self):
+        # 创建一个 test0.shadowkill 的实例
+        self.ui = ShadowKill_UI.Ui_shadowkill()
+        self.ui.setupUi(self)
+        self.setWindowTitle("ShadowKill")
+
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("myappid")
+
+        try:
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap("./icon/Kano.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.setWindowIcon(icon)
+        except FileNotFoundError:
+            self.add_history_text('图标文件不存在')
+
+    ### 按键初始化
+    def init_my_button(self):
 
         # 绑定按钮
         self.ui.theme_comboBox.currentIndexChanged.connect(self.change_theme)

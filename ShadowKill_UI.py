@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'test0.ui'
+# Form implementation generated from reading ui file 'ShadowKill_UI.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -11,11 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(1152, 808)
-        self.verticalLayoutWidget = QtWidgets.QWidget(Form)
+class Ui_shadowkill(object):
+    def setupUi(self, shadowkill):
+        shadowkill.setObjectName("shadowkill")
+        shadowkill.resize(1152, 808)
+        self.verticalLayoutWidget = QtWidgets.QWidget(shadowkill)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 20, 221, 521))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
@@ -49,7 +49,7 @@ class Ui_Form(object):
         self.load_config_pushbutton.setObjectName("load_config_pushbutton")
         self.horizontalLayout_3.addWidget(self.load_config_pushbutton)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
-        self.horizontalLayoutWidget = QtWidgets.QWidget(Form)
+        self.horizontalLayoutWidget = QtWidgets.QWidget(shadowkill)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(250, 10, 595, 80))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
@@ -73,13 +73,13 @@ class Ui_Form(object):
         self.pushButton_5 = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.pushButton_5.setObjectName("pushButton_5")
         self.horizontalLayout_2.addWidget(self.pushButton_5)
-        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(Form)
+        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(shadowkill)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(240, 700, 871, 80))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.game_player_horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.game_player_horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.game_player_horizontalLayout.setObjectName("game_player_horizontalLayout")
-        self.verticalLayoutWidget_2 = QtWidgets.QWidget(Form)
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(shadowkill)
         self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 550, 221, 231))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
@@ -96,35 +96,35 @@ class Ui_Form(object):
         self.operation_history_textEdit.setFocusPolicy(QtCore.Qt.NoFocus)
         self.operation_history_textEdit.setObjectName("operation_history_textEdit")
         self.verticalLayout_2.addWidget(self.operation_history_textEdit)
-        self.theme_comboBox = QtWidgets.QComboBox(Form)
+        self.theme_comboBox = QtWidgets.QComboBox(shadowkill)
         self.theme_comboBox.setGeometry(QtCore.QRect(920, 40, 87, 22))
         self.theme_comboBox.setObjectName("theme_comboBox")
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(shadowkill)
+        QtCore.QMetaObject.connectSlotsByName(shadowkill)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, shadowkill):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.lineEdit.setText(_translate("Form", "参与者名单"))
-        self.sure_name_pushbutton.setText(_translate("Form", "确定"))
-        self.load_name_pushbutton.setText(_translate("Form", "读取名字文件"))
-        self.unlock_pushbutton.setText(_translate("Form", "解除锁定"))
-        self.load_config_pushbutton.setText(_translate("Form", "读取配置文件"))
-        self.pushButton_6.setText(_translate("Form", "保存图片"))
-        self.pushButton.setText(_translate("Form", "旋转魔方"))
-        self.pushButton_2.setText(_translate("Form", "交换"))
-        self.pushButton_3.setText(_translate("Form", "通路"))
-        self.pushButton_4.setText(_translate("Form", "改建"))
-        self.pushButton_5.setText(_translate("Form", "完成"))
-        self.lineEdit_2.setText(_translate("Form", "操作历史"))
+        shadowkill.setWindowTitle(_translate("shadowkill", "Form"))
+        self.lineEdit.setText(_translate("shadowkill", "参与者名单"))
+        self.sure_name_pushbutton.setText(_translate("shadowkill", "确定"))
+        self.load_name_pushbutton.setText(_translate("shadowkill", "读取名字文件"))
+        self.unlock_pushbutton.setText(_translate("shadowkill", "解除锁定"))
+        self.load_config_pushbutton.setText(_translate("shadowkill", "读取配置文件"))
+        self.pushButton_6.setText(_translate("shadowkill", "保存图片"))
+        self.pushButton.setText(_translate("shadowkill", "旋转魔方"))
+        self.pushButton_2.setText(_translate("shadowkill", "交换"))
+        self.pushButton_3.setText(_translate("shadowkill", "通路"))
+        self.pushButton_4.setText(_translate("shadowkill", "改建"))
+        self.pushButton_5.setText(_translate("shadowkill", "完成"))
+        self.lineEdit_2.setText(_translate("shadowkill", "操作历史"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
+    shadowkill = QtWidgets.QWidget()
+    ui = Ui_shadowkill()
+    ui.setupUi(shadowkill)
+    shadowkill.show()
     sys.exit(app.exec_())
