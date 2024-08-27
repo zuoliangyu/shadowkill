@@ -39,6 +39,10 @@ class MyUI(QtWidgets.QWidget):
         self.ui.unlock_pushbutton.clicked.connect(self.unlock_name_list)
         self.ui.load_config_pushbutton.clicked.connect(self.load_config)
 
+    ### 添加历史操作记录
+    def add_history_text(self, message):
+        self.ui.operation_history_textEdit.append(message)
+
     def load_config(self):
         try:
             with open('./config/color.txt', 'r') as file:
@@ -46,8 +50,7 @@ class MyUI(QtWidgets.QWidget):
                 self.color_list = file.readlines()
             self.color_list = [name.strip() for name in self.color_list]
         except FileNotFoundError:
-            # 弹出一个消息框来提醒用户
-            QtWidgets.QMessageBox.warning(self, '文件不存在', '文件 color.txt 不存在，已创建新文件。')
+            self.add_history_text('文件 color.txt 不存在，已创建新文件')
             # 创建新文件
             with open('./config/color.txt', 'w') as file:
                 pass
@@ -84,18 +87,18 @@ class MyUI(QtWidgets.QWidget):
         # 创建文件夹
         try:
             os.makedirs(self.save_photo_path, exist_ok=True)
-            QMessageBox.information(self, "成功", f"文件夹 {folder_name} 创建成功！")
+            self.add_history_text(f"\n文件夹 {folder_name} 创建成功！")
         except Exception as e:
-            QMessageBox.critical(self, "错误", f"创建文件夹时出错: {e}")
+            self.add_history_text(f"创建文件夹时出错: {e}")
 
     ### 确认参与者名单，并将其锁定
     def sure_name_list(self):
         if self.ui.name_textEdit.toPlainText() == '':
             # 弹出一个消息框来提醒用户
-            QtWidgets.QMessageBox.warning(self, '警告', '游戏玩家为空')
+            self.add_history_text('游戏玩家为空')
             return
         if not self.color_list:
-            QtWidgets.QMessageBox.warning(self, '警告', '未读取配置信息')
+            self.add_history_text('未读取配置信息')
             return
         self.create_folder()
         self.ui.name_textEdit.setReadOnly(True)
@@ -157,8 +160,7 @@ class MyUI(QtWidgets.QWidget):
             # 将文本设置到 QTextEdit 中
             self.ui.name_textEdit.setText(text)
         except FileNotFoundError:
-            # 弹出一个消息框来提醒用户
-            QtWidgets.QMessageBox.warning(self, '文件不存在', '文件 name.txt 不存在，已创建新文件。')
+            self.add_history_text('文件 name.txt 不存在，已创建新文件')
             # 创建新文件
             with open('./config/name.txt', 'w') as file:
                 pass
