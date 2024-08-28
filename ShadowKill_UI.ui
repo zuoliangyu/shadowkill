@@ -139,6 +139,240 @@
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>40</y>
+     <width>151</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit_3"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit_4"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTextEdit" name="textEdit_2"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="textEdit_7"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEdit_8"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textEdit_5"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTextEdit" name="textEdit_6"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QTextEdit" name="textEdit_9"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>40</y>
+     <width>181</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit_10"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit_11"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTextEdit" name="textEdit_12"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textEdit_13"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTextEdit" name="textEdit_14"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit_15"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="textEdit_16"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEdit_17"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QTextEdit" name="textEdit_18"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>40</y>
+     <width>201</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit_19"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit_20"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTextEdit" name="textEdit_21"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textEdit_22"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTextEdit" name="textEdit_23"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit_24"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="textEdit_25"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEdit_26"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QTextEdit" name="textEdit_27"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>350</y>
+     <width>181</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit_28"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit_29"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTextEdit" name="textEdit_30"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textEdit_31"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTextEdit" name="textEdit_32"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit_33"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="textEdit_34"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEdit_35"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QTextEdit" name="textEdit_36"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>360</y>
+     <width>171</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit_42"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QTextEdit" name="textEdit_45"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textEdit_40"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEdit_44"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit_38"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="textEdit_43"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit_37"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTextEdit" name="textEdit_41"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTextEdit" name="textEdit_39"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>370</y>
+     <width>161</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit_46"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textEdit_47"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTextEdit" name="textEdit_48"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textEdit_49"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTextEdit" name="textEdit_50"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit_51"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTextEdit" name="textEdit_52"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEdit_53"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QTextEdit" name="textEdit_54"/>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>
