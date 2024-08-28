@@ -1,0 +1,88 @@
+/* 设置全局背景颜色为深淡紫色 */
+QWidget {
+    background-color: #DDA0DD;
+}
+
+/* 设置按钮的背景颜色为深淡紫色 */
+QPushButton {
+    background-color: #DDA0DD;
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+/* 设置按钮悬停时的背景颜色 */
+QPushButton:hover {
+    background-color: #EE82EE;
+}
+
+/* 设置按钮按下时的背景颜色 */
+QPushButton:pressed {
+    background-color: #DA70D6;
+}
+
+/* 设置标签的背景颜色为深淡紫色 */
+QLabel {
+    background-color: #DDA0DD;
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+/* 设置文本框的背景颜色为深淡紫色 */
+QLineEdit {
+    background-color: #DDA0DD;
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+/* 设置复选框的背景颜色为深淡紫色 */
+QCheckBox {
+    background-color: #DDA0DD;
+}
+
+/* 设置单选按钮的背景颜色为深淡紫色 */
+QRadioButton {
+    background-color: #DDA0DD;
+}
+
+/* 设置下拉列表的背景颜色为深淡紫色 */
+QComboBox {
+    background-color: #DDA0DD;
+    border: 1px solid #000000;
+    padding: 5px;
+}
+
+/* 设置滚动条的背景颜色为深淡紫色 */
+QScrollBar:horizontal {
+    background-color: #DDA0DD;
+}
+
+QScrollBar:vertical {
+    background-color: #DDA0DD;
+}
+
+/* 设置滚动条滑块的背景颜色为深淡紫色 */
+QScrollBar::handle:horizontal {
+    background-color: #EE82EE;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #EE82EE;
+}
+
+/* 设置滚动条滑块悬停时的背景颜色 */
+QScrollBar::handle:hover:horizontal {
+    background-color: #DA70D6;
+}
+
+QScrollBar::handle:hover:vertical {
+    background-color: #DA70D6;
+}
+
+/* 设置滚动条滑块按下时的背景颜色 */
+QScrollBar::handle:pressed:horizontal {
+    background-color: #8B008B;
+}
+
+QScrollBar::handle:pressed:vertical {
+    background-color: #8B008B;
+}

@@ -35,7 +35,7 @@ def get_qss_files(folder_path):
 class MyUI(QtWidgets.QWidget):
     def __init__(self):
         self.theme_list = ['default']
-        self.theme_list.extend(get_qss_files('./config'))
+        self.theme_list.extend(get_qss_files('./config/my_style'))
         print(self.theme_list)
         self.save_photo_path = ''  # 游戏截图保存目录
         self.color_list = []  # 每个人的颜色
@@ -81,7 +81,7 @@ class MyUI(QtWidgets.QWidget):
             self.setStyleSheet("")  # 清除样式，恢复默认
             self.add_history_text("主题切换为: default")
             return
-        style_fil_path = f'./config/{self.ui.theme_comboBox.currentText()}.qss'
+        style_fil_path = f'./config/my_style/{self.ui.theme_comboBox.currentText()}.qss'
         print(index)
         qssStyle = CommonHelper.readQss(style_fil_path)
         if qssStyle:
@@ -170,6 +170,7 @@ class MyUI(QtWidgets.QWidget):
             # 创建一个按钮
             button = QtWidgets.QPushButton(player)
             # 将颜色设置为按钮的文字颜色
+            #button.setStyleSheet(f"color: #c1482f; font-size: 15pt;font-weight: bold")
             button.setStyleSheet(f"color: {self.color_list[i]}; font-size: 15pt;font-weight: bold")
             # 将按钮添加到 QHBoxLayout 中
             self.ui.game_player_horizontalLayout.addWidget(button)
