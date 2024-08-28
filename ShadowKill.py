@@ -103,6 +103,13 @@ class MyUI(QtWidgets.QWidget):
             # 创建新文件
             with open('./config/color.txt', 'w') as file:
                 pass
+        try:
+            pass
+        except FileNotFoundError:
+            self.add_history_text('文件 map.txt 不存在，已创建新文件')
+            # 创建新文件
+            with open('./config/map.txt', 'w') as file:
+                pass
         print(self.color_list)
 
     def take_screenshot(self, button_text):
@@ -170,7 +177,6 @@ class MyUI(QtWidgets.QWidget):
             # 创建一个按钮
             button = QtWidgets.QPushButton(player)
             # 将颜色设置为按钮的文字颜色
-            #button.setStyleSheet(f"color: #c1482f; font-size: 15pt;font-weight: bold")
             button.setStyleSheet(f"color: {self.color_list[i]}; font-size: 15pt;font-weight: bold")
             # 将按钮添加到 QHBoxLayout 中
             self.ui.game_player_horizontalLayout.addWidget(button)
